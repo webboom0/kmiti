@@ -219,7 +219,8 @@
   }
 
   .header .gnb.is-open {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .header .menu {

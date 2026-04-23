@@ -80,3 +80,12 @@ mobileQuery.addEventListener("change", (event) => {
   closeAllSubmenus();
   closeLoginDropdown();
 });
+
+if (window.AOS) {
+  window.AOS.init({
+    duration: 700,
+    easing: "ease-out-cubic",
+    once: true,
+    offset: 80,
+  });
+}
