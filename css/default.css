@@ -116,7 +116,7 @@ a:hover:not(.btn) {
   justify-content: center;
   padding: 1rem;
   border-radius: .8rem;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid transparent;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
     transform 0.2s ease, box-shadow 0.2s ease;
