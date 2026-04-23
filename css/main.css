@@ -59,7 +59,7 @@ body {
   margin-bottom: 12px;
 }
 
-.hero-content h1 {
+.hero-content .hero-title {
   font-size: clamp(39px, 5vw, 60px);
   line-height: 1.08;
   font-weight: 700;

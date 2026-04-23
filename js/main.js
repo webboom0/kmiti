@@ -1,5 +1,8 @@
 const menuToggleButton = document.querySelector(".menu-toggle");
 const gnb = document.querySelector(".gnb");
+const menuModalBackdrop = document.querySelector(".menu-modal-backdrop");
+const skipToGnbLink = document.querySelector('#skipNav a[href="#gnb"]');
+const firstGnbMenuLink = document.querySelector("#primary-menu .menu-link");
 const submenuToggleButtons = document.querySelectorAll(".submenu-toggle");
 const loginDropdown = document.querySelector(".login-dropdown");
 const loginToggleButton = document.querySelector(".header-login-btn");
@@ -18,10 +21,18 @@ function handleMobileMenuToggle() {
   const isExpanded = menuToggleButton.getAttribute("aria-expanded") === "true";
   menuToggleButton.setAttribute("aria-expanded", String(!isExpanded));
   gnb.classList.toggle("is-open", !isExpanded);
+  menuModalBackdrop?.classList.toggle("is-open", !isExpanded);
 
   if (isExpanded) {
     closeAllSubmenus();
   }
+}
+
+function closeMobileMenu() {
+  gnb?.classList.remove("is-open");
+  menuModalBackdrop?.classList.remove("is-open");
+  menuToggleButton?.setAttribute("aria-expanded", "false");
+  closeAllSubmenus();
 }
 
 function closeLoginDropdown() {
@@ -59,6 +70,20 @@ if (menuToggleButton) {
   menuToggleButton.addEventListener("click", handleMobileMenuToggle);
 }
 
+if (menuModalBackdrop) {
+  menuModalBackdrop.addEventListener("click", () => {
+    if (!mobileQuery.matches) return;
+    closeMobileMenu();
+  });
+}
+
+if (skipToGnbLink) {
+  skipToGnbLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    gnb?.focus();
+  });
+}
+
 if (loginToggleButton) {
   loginToggleButton.addEventListener("click", handleLoginDropdownToggle);
 }
@@ -73,11 +98,18 @@ document.addEventListener("click", (event) => {
 
 submenuToggleButtons.forEach(bindSubmenuToggle);
 
+if (gnb) {
+  gnb.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab" || event.shiftKey) return;
+    if (document.activeElement !== gnb) return;
+    event.preventDefault();
+    firstGnbMenuLink?.focus();
+  });
+}
+
 mobileQuery.addEventListener("change", (event) => {
   if (event.matches) return;
-  gnb?.classList.remove("is-open");
-  menuToggleButton?.setAttribute("aria-expanded", "false");
-  closeAllSubmenus();
+  closeMobileMenu();
   closeLoginDropdown();
 });
 

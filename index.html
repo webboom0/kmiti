@@ -18,18 +18,19 @@
   </div>
   <header class="header">
     <div class="container header-inner">
-      <a class="logo" href="#" aria-label="홈으로 이동">
-        <img src="./images/symbol.svg" alt="한국기상산업기술원 심볼" class="logo-symbol" />
-      </a>
-
+      <h1 class="logo">
+        <a href="#" aria-label="홈으로 이동">
+          <img src="./images/symbol.svg" alt="한국기상산업기술원 심볼" class="logo-symbol" />
+        </a>
+      </h1>
       <button class="menu-toggle" type="button" aria-controls="primary-menu" aria-expanded="false">
         <i class="ri-menu-line" aria-hidden="true"></i><span class="blind">메뉴</span>
       </button>
 
-      <nav id="gnb" class="gnb" aria-label="주요 메뉴">
+      <nav id="gnb" class="gnb" aria-label="주요 메뉴" tabindex="-1">
         <ul id="primary-menu" class="menu">
           <li class="menu-item has-submenu">
-            <a class="menu-link submenu-toggle" aria-expanded="false">
+            <a href="#" class="menu-link submenu-toggle" aria-expanded="false" aria-haspopup="true">
               신청 안내
             </a>
             <ul class="submenu">
@@ -41,7 +42,7 @@
           </li>
 
           <li class="menu-item has-submenu">
-            <a class="menu-link submenu-toggle" aria-expanded="false">
+            <a href="#" class="menu-link submenu-toggle" aria-expanded="false" aria-haspopup="true">
               검정 신청
             </a>
             <ul class="submenu">
@@ -53,7 +54,7 @@
           </li>
 
           <li class="menu-item has-submenu">
-            <a class="menu-link submenu-toggle" aria-expanded="false">
+            <a href="#" class="menu-link submenu-toggle" aria-expanded="false" aria-haspopup="true">
               마이페이지
             </a>
             <ul class="submenu">
@@ -84,6 +85,7 @@
         </div>
       </div>
     </div>
+    <button type="button" class="menu-modal-backdrop" aria-label="메뉴 닫기"></button>
   </header>
 
   <main id="contents">
@@ -91,7 +93,7 @@
       <div class="hero-overlay">
         <div class="container hero-content">
           <p class="hero-kicker">RELIABILITY & ACCURACY</p>
-          <h1>한국기상산업기술원<br />온라인 검정신청 시스템</h1>
+          <div class="hero-title">한국기상산업기술원<br />온라인 검정신청 시스템</div>
           <p>최첨단 기상 기술과 엄격한 품질 관리를 통해 신뢰의 기준,<br />지속 가능한 기상 서비스의 표준을 선도합니다.</p>
           <div class="hero-actions">
             <a href="#" class="btn btn-primary">검정 신청 시작하기 &nbsp;<i class="ri-arrow-right-line"></i></a>
