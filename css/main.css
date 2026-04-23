@@ -18,6 +18,11 @@ body {
   position: relative;
   overflow: hidden;
   background: #1a4f84;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 650px;
 }
 
 .hero::before {
