@@ -297,6 +297,10 @@ body {
     font-size: 2em;
   }
 
+  .hero-content .hero-title {
+    font-size: 2em;
+  }
+
   .hero-content p {
     font-size: 0.8em;
   }
