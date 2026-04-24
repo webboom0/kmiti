@@ -11,6 +11,11 @@
   gap: 20px;
 }
 
+.footer .address {
+  display: flex;
+  gap: 10px;
+}
+
 .footer-brand p {
   color: #53667a;
   font-size: 12px;
@@ -41,6 +46,12 @@
 }
 
 
+@media (max-width: 1024px) {
+  .footer .address {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 
 @media (max-width: 740px) {
   .footer-inner {
